@@ -11,4 +11,4 @@ def get_data(request):
         query = "SELECT * FROM mytable LIMIT 5"
         df = pd.read_sql_query(query, connection)
         results = df.to_dict(orient='records')
-    return JsonResponse(results, safe=False, json_dumps_params={'indent': 2})
+    return JsonResponse(results, safe=False)
