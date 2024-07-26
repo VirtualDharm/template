@@ -130,11 +130,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Data from js</h1>
+      '<h1>Data from js</h1>'
       <ul>
         {datajs.map(item => ( <li key={item.id}>{item.name}</li> ))}
       </ul>
-      <h1>Data from django</h1>
+      '<h1>Data from django</h1>'
       <ul>
         {datapy.map(item => ( <li key={item.id}>{item.name}</li> ))}
       </ul>
