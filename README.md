@@ -1,3 +1,4 @@
+```
 python/pip --version
 
 django-admin startproject backendpy
@@ -130,11 +131,11 @@ function App() {
 
   return (
     <div className="App">
-      <p>Data from js</p>
+      <h1>Data from js</h1>
       <ul>
         {datajs.map(item => ( <li key={item.id}>{item.name}</li> ))}
       </ul>
-      <p>Data from django</p>
+      <h1>Data from django</h1>
       <ul>
         {datapy.map(item => ( <li key={item.id}>{item.name}</li> ))}
       </ul>
@@ -145,3 +146,4 @@ function App() {
 export default App;
 
 npm start
+```
