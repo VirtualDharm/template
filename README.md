@@ -4,7 +4,7 @@ django-admin startproject backendpy
 pip install django mysqlclient
 python manage.py startapp myapp
 
-# backend/settings.py
+#backend/settings.py
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -17,7 +17,7 @@ DATABASES = {
 }
 INSTALLED_APPS = [ 'myapp', ]
 
-# myapp/views.py
+#myapp/views.py
 import pandas as pd
 from django.http import JsonResponse
 from django.db import connection
@@ -29,7 +29,7 @@ def get_data(request):
         results = df.to_dict(orient='records')
     return JsonResponse(results, safe=False)
 
-# myapp/urls.py
+#myapp/urls.py
 from django.urls import path
 from .views import get_data
 
@@ -37,7 +37,7 @@ urlpatterns = [
     path('data/', get_data, name='get_data'),
 ]
 
-# backend/urls.py
+#backend/urls.py
 path('api/', include('myapp.urls')),
 
 pip install django-cors-headers
@@ -100,6 +100,7 @@ INSERT INTO sample_table (name) VALUES ('Sample Data 1'),('Sample Data 2');
 
 react:
 
+#App.js
 npx create-react-app frontend
 npm install axios
 
@@ -131,19 +132,16 @@ function App() {
     <div className="App">
       <h1>Data from js</h1>
       <ul>
-        {datajs.map(item => (
-          <li key={item.id}>{item.name}</li>
-        ))}
+        {datajs.map(item => ( <li key={item.id}>{item.name}</li> ))}
       </ul>
       <h1>Data from django</h1>
       <ul>
-        {datapy.map(item => (
-          <li key={item.id}>{item.name}</li>
-        ))}
+        {datapy.map(item => ( <li key={item.id}>{item.name}</li> ))}
       </ul>
     </div>
   );
 }
 
 export default App;
+
 npm start
